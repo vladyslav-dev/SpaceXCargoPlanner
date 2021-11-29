@@ -1,0 +1,72 @@
+// Reset all styles
+@import "./reset.scss"; 
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+// ------------ Variables ------------
+
+$mainBgColor: #1B1D22;
+$mainTextColor: #FFFFFF;
+$secondTextColor: #979797;
+
+
+.container {
+    max-width: 1110px;
+    padding: 0 16px;
+    margin: 0 auto;
+}
+
+.container-xl {
+    max-width: 2620px;
+    padding: 0 34px;
+    margin: 0 auto;
+}
+
+@media (max-width: 1200px) {
+    .container-xl {
+        padding: 0 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .container-xl {
+        padding: 0 16px;
+    }
+}
+
+@media (max-width: 580px) {
+    .container-xl {
+        padding: 0 12px;
+    }
+}
+
+// ------------ Mixins ------------
+
+@mixin sm {
+    @media (max-width: 580px) {
+        @content;
+    }
+}
+
+@mixin md {
+    @media (max-width: 768px) {
+        @content;
+    }
+}
+
+@mixin lg {
+    @media (max-width: 992px) {
+        @content;
+    }
+}
+
+@mixin xl {
+    @media (max-width: 1200px) {
+        @content;
+    }
+}
