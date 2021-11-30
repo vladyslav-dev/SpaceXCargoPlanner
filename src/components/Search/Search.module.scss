@@ -22,6 +22,10 @@
         &::placeholder {
             color: #000;
         }
+
+        @include mobile {
+            width: 100%;
+        }
     }
 
     .searchIcon {

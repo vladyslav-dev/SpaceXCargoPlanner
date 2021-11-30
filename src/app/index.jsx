@@ -5,7 +5,9 @@ import { updateActive } from "../store/actions";
 
 import Navbar from "../components/Navbar";
 import Search from "../components/Search";
+import ShipmentLayout from "../components/ShipmentLayout";
 import ShipmentDetails from "../components/ShipmentDetails";
+import SearchResult from "../components/SearchResult";
 
 import * as action from "../store/actions";
 import { addKey } from "../utils";
@@ -16,7 +18,7 @@ const App = () => {
   console.log("Render")
 
   const dispatch = useDispatch();
-  const { data } = useSelector(state => state)
+  const { data, search, isBurgerOpen } = useSelector(state => state)
 
   useEffect(() => {
     api.getData()
@@ -31,14 +33,19 @@ const App = () => {
     return <div>Loading...</div>
   }
 
+  const resultData = data.filter(item => item.name.toLowerCase().includes(search.toLowerCase()))
+
+
   return (
     <div className={styles.appWrapper}>
       <div className={styles.appNavbar}>
-        <Navbar />
+        <Navbar isBurgerOpen={isBurgerOpen} />
       </div>
       <div className={styles.appMain}>
         <Search />
-        <ShipmentDetails />
+        <ShipmentLayout>
+          {search ? <SearchResult result={resultData} /> : <ShipmentDetails />}
+        </ShipmentLayout>
       </div>
     </div>
   );

@@ -1,0 +1,13 @@
+@import "../../styles/index.scss";
+
+.wrapper {
+    background: linear-gradient(124.01deg, #2D3038 0%, rgba(45, 48, 56, 0) 100%);
+    border-radius: 30px;
+    height: 100%;
+    margin-top: 32px;
+    padding: 29px 51px;
+
+    @include mobile {
+        padding: 20px 15px;
+    }
+}

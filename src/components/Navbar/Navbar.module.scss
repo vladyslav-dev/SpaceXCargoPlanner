@@ -1,3 +1,5 @@
+@import "../../styles/index.scss";
+
 .navPanel {
     margin-right: 50px;
 
@@ -7,6 +9,105 @@
     }
 
     .navPanelMenu {
+        z-index: 9;
         margin-top: 40px;
+        transition: right 0.9s cubic-bezier(0.77,0.2,0.05,1.0);
     }
+
+    .burgerMenu {
+        display: none;
+    }
+}
+
+@include tablet {
+    .navPanel {
+        display: flex;
+        justify-content: space-between;
+        align-items: center; 
+        position: relative;
+     
+         .navPanelLogo {
+            margin-bottom: 30px;
+
+            @include mobile {
+                width: 151px;
+                height: 30px;
+
+                & > img {
+                    width: inherit;
+                    height: inherit;
+                }
+            }
+         }
+     
+         .navPanelMenu {
+             margin: 0;
+             padding-left: 20px;
+             position: fixed;
+             top: 80px;
+             width: 100vw;
+             height: 100%;
+             background-color: $mainBgColor;
+         }
+ 
+         .burgerMenu {
+             display: block;
+             .menuToggle {
+                 position: absolute;
+                 left: -9999px;
+             
+                 &:checked ~ .burgerBtn > span {
+                     transform: rotate(45deg);
+             
+                     &::before {
+                         top: 0;
+                         transform: rotate(0);
+                     }
+             
+                     &::after {
+                         top: 0;
+                         transform: rotate(90deg);
+                     }
+                 }
+             }
+                
+             .burgerBtn {
+                 display: flex;
+                 align-items: center;
+                 position: fixed;
+                 top: 24px;
+                 right: 20px;
+             
+                 width: 30px;
+                 height: 22px;
+             
+                 cursor: pointer;
+                 z-index: 1;
+             
+                 & > span,
+                 & > span::before,
+                 & > span::after {
+                     display: block;
+                     position: absolute;
+             
+                     width: 100%;
+                     height: 2px;
+             
+                     background-color: $mainTextColor;
+             
+                     transition-duration: .25s;
+                 }
+             
+                 & > span::before {
+                     content: '';
+                     top: -8px;
+                 }
+             
+                 & > span::after {
+                     content: '';
+                     top: 8px;
+                 }
+             }    
+         }        
+     }
 }

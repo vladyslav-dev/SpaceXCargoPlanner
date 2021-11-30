@@ -1,11 +1,6 @@
 @import "../../styles/index.scss";
 
 .shipmentDetails {
-    background: linear-gradient(124.01deg, #2D3038 0%, rgba(45, 48, 56, 0) 100%);
-    border-radius: 30px;
-    height: 100%;
-    margin-top: 32px;
-    padding: 29px 51px;
 
     .shipmentTitle {
         margin-bottom: 30px;
@@ -14,6 +9,11 @@
             font-weight: normal;
             font-size: 64px;
             line-height: 74px;
+
+            @include tablet {
+                font-size: 28px;
+                line-height: 38px;
+            }
         }
 
         .shipmentTitleEmail {
@@ -45,6 +45,16 @@
 
             font-size: 16px;
             line-height: 24px;
+
+            @include tablet {
+                width: 305px;
+                height: 40px;
+                padding: 10.4px 19.06px;
+            }
+
+            @include tablet {
+                width: 100%;
+            }
         }
     }
 
@@ -56,11 +66,29 @@
             font-size: 34px;
             line-height: 44px;
             color: $secondTextColor;
+
+            @include tablet {
+                font-size: 18px;
+                line-height: 20px;
+            }
+
+            @include mobile {
+                text-align: center;
+            }
         }
 
         .shipmentResultValue {
             font-size: 56px;
             line-height: 66px;
+
+            @include tablet {
+                font-size: 34px;
+                line-height: 44px;
+            }
+
+            @include mobile {
+                text-align: center;
+            }
         }
     }
 }

@@ -14,3 +14,12 @@ export const updateActive = payload => ({
     type: types.UPDATE_ACTIVE,
     payload,
 });
+
+export const updateSearchValue = payload => ({
+    type: types.UPDATE_SEARCH_VALUE,
+    payload,
+});
+
+export const burgerHandler = () => ({
+    type: types.BURGER_TOGGLE,
+})
