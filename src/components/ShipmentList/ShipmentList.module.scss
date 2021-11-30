@@ -1,0 +1,13 @@
+@import "../../styles/index.scss";
+
+.shipmentTitle {
+    text-transform: uppercase;
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 38px;
+    color: $secondTextColor;
+}
+
+.shipmentList {
+    margin-top: 13px;
+}

@@ -1,0 +1,66 @@
+@import "../../styles/index.scss";
+
+.shipmentDetails {
+    background: linear-gradient(124.01deg, #2D3038 0%, rgba(45, 48, 56, 0) 100%);
+    border-radius: 30px;
+    height: 100%;
+    margin-top: 32px;
+    padding: 29px 51px;
+
+    .shipmentTitle {
+        margin-bottom: 30px;
+
+        .shipmentTitleName {
+            font-weight: normal;
+            font-size: 64px;
+            line-height: 74px;
+        }
+
+        .shipmentTitleEmail {
+            color: $secondTextColor;
+        }
+    }
+
+    .shipmentBoxes {
+        margin-bottom: 30px;
+        display: flex;
+        flex-direction: column;
+
+        .shipmentBoxesLabel {
+            font-size: 16px;
+            line-height: 24px;
+            text-transform: uppercase;
+            color: $secondTextColor;
+            margin-bottom: 10px;
+        }
+
+        .shipmentBoxesInput {
+            border-radius: 10px;
+            box-sizing: border-box;
+            width: 320px;
+            height: 50px;
+            outline: none;
+            border: none;
+            padding: 13px 40px 13px 20px;
+
+            font-size: 16px;
+            line-height: 24px;
+        }
+    }
+
+    .shipmentResult {
+        display: flex;
+        flex-direction: column;
+        
+        .shipmentResultText {
+            font-size: 34px;
+            line-height: 44px;
+            color: $secondTextColor;
+        }
+
+        .shipmentResultValue {
+            font-size: 56px;
+            line-height: 66px;
+        }
+    }
+}
