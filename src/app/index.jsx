@@ -15,8 +15,6 @@ import { api } from "../api";
 
 const App = () => {
 
-  console.log("Render")
-
   const dispatch = useDispatch();
   const { data, search, isBurgerOpen } = useSelector(state => state)
 
