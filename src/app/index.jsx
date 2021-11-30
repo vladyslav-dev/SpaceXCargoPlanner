@@ -29,12 +29,7 @@ const App = () => {
       .then((res) => dispatch(updateActive(res[0]["id"]))) // set default first
   }, [])
 
-  if (!data.length) {
-    return <div>Loading...</div>
-  }
-
   const resultData = data.filter(item => item.name.toLowerCase().includes(search.toLowerCase()))
-
 
   return (
     <div className={styles.appWrapper}>
