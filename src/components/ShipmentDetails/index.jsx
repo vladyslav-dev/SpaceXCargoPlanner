@@ -2,7 +2,7 @@ import React from "react";
 import styles from "./ShipmentDetails.module.scss"
 import { useSelector, useDispatch } from "react-redux";
 import { updateBoxes } from "../../store/actions";
-import { calculateShipmentValue, checkIsNaN } from "../../utils";
+import { calculateShipmentValue, checkIsValid } from "../../utils";
 
 const ShipmentDetails = () => {
 
@@ -38,7 +38,7 @@ const ShipmentDetails = () => {
             </div>
             <div className={styles.shipmentResult}>
                 <span className={styles.shipmentResultText}>Number of required cargo bays</span>
-                <span className={styles.shipmentResultValue}>{checkIsNaN(calculateShipmentValue(currentData.boxes))}</span>
+                <span className={styles.shipmentResultValue}>{checkIsValid(calculateShipmentValue(currentData.boxes))}</span>
             </div>
         </div>
     );

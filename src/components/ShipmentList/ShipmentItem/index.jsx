@@ -1,5 +1,6 @@
 import React from "react";
 import styles from "./ShipmentItem.module.scss";
+import classnames from "classnames";
 import { useDispatch } from "react-redux";
 import { updateActive } from "../../../store/actions";
 
@@ -10,7 +11,9 @@ const ShipmentItem = ({ name, isActive, id }) => {
     return (
         <li
             id={id}
-            className={`${styles.ShipmentItem} ${isActive ? styles.ShipmentItemActive : ""}`}
+            className={classnames(styles.ShipmentItem, {
+                [styles["ShipmentItemActive"]]: isActive,
+            })}
             onClick={(e) => dispatch(updateActive(e.target.id))}
         >
             {name}

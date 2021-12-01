@@ -1,23 +1,26 @@
 import { types } from "./types";
 
-export const setData = payload => ({
+export const setData = data => ({
     type: types.SET_DATA,
-    payload,
+    payload: [...data],
 });
 
-export const updateBoxes = payload => ({
+export const updateBoxes = boxesData => ({
     type: types.UPDATE_BOXES,
-    payload,
+    payload: {
+        id: boxesData.id,
+        boxes: boxesData.boxes
+    },
 });
 
-export const updateActive = payload => ({
+export const updateActive = id => ({
     type: types.UPDATE_ACTIVE,
-    payload,
+    payload: id,
 });
 
-export const updateSearchValue = payload => ({
+export const updateSearchValue = searchValue => ({
     type: types.UPDATE_SEARCH_VALUE,
-    payload,
+    payload: searchValue,
 });
 
 export const burgerHandler = () => ({

@@ -5,9 +5,10 @@ import { updateActive } from "../store/actions";
 
 import Navbar from "../components/Navbar";
 import Search from "../components/Search";
-import ShipmentLayout from "../components/ShipmentLayout";
+import Layout from "../layout";
 import ShipmentDetails from "../components/ShipmentDetails";
 import SearchResult from "../components/SearchResult";
+import Loader from "../components/Loader";
 
 import * as action from "../store/actions";
 import { addKey } from "../utils";
@@ -27,7 +28,9 @@ const App = () => {
       .then((res) => dispatch(updateActive(res[0]["id"]))) // set default first
   }, [])
 
-  const resultData = data.filter(item => item.name.toLowerCase().includes(search.toLowerCase()))
+  if (!data.length) {
+    return <Loader />
+  }
 
   return (
     <div className={styles.appWrapper}>
@@ -36,9 +39,9 @@ const App = () => {
       </div>
       <div className={styles.appMain}>
         <Search />
-        <ShipmentLayout>
-          {search ? <SearchResult result={resultData} /> : <ShipmentDetails />}
-        </ShipmentLayout>
+        <Layout>
+          {search ? <SearchResult data={data} search={search} /> : <ShipmentDetails />}
+        </Layout>
       </div>
     </div>
   );
